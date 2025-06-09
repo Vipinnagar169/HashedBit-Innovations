@@ -1,1 +1,1 @@
-# HashedBit Projects - 
+# HashedBit Innovations Projects - 
