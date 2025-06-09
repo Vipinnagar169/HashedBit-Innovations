@@ -1,0 +1,150 @@
+<!-- JS DOM Assignment - Dynamic - CSS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Styler</title>
+    <style>
+        .text-here {
+            font-size: 55px;
+            font-family: sans-serif;
+            color: black;
+            text-decoration: none;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            text-align: left;
+            letter-spacing: normal;
+            word-spacing: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Task Statement -->
+
+    <div class='text-here' id='text-container'>This is some example text</div>
+
+    <br>
+
+    <!-- Color change -->
+    <input type="text" id="colorbox" placeholder="Enter color name (e.g. red)">
+    <button id="colorchange">Change Colour</button>
+
+    <br><br>
+
+    <!-- Font size slider -->
+    <input type="range" id="fontsize" min="10" max="100" value="55">
+
+    <br><br>
+
+    <!-- Style toggle buttons -->
+    <button id="italic" class="stylebt">Italics</button>
+    <button id="underline" class="stylebt">Underline</button>
+    <button id="bold" class="stylebt">Bold</button>
+
+    <br><br>
+
+    <!-- Font family dropdown -->
+    <select id="list">
+        <option value="serif">Serif</option>
+        <option value="sans-serif">Sans-Serif</option>
+        <option value="monospace">Monospace</option>
+        <option value="cursive">Cursive</option>
+        <option value="fantasy">Fantasy</option>
+    </select>
+
+    <br><br>
+
+    <!-- Get CSS button -->
+    <button id="getstyle">Get CSS</button>
+
+    <br><br>
+
+    <!-- CSS Output -->
+    <p id="css-props"></p>
+
+    <!-- JavaScript Code -->
+    <script>
+        // Change text color
+        document.getElementById("colorchange").addEventListener("click", function () {
+            const color = document.getElementById("colorbox").value.trim();
+            document.getElementById("text-container").style.color = color;
+        });
+
+        // Change font size
+        document.getElementById("fontsize").addEventListener("input", function () {
+            const size = this.value;
+            document.getElementById("text-container").style.fontSize = size + "px";
+        });
+
+        // Toggle italic style
+        document.getElementById("italic").addEventListener("click", function () {
+            const text = document.getElementById("text-container");
+            text.style.fontStyle = text.style.fontStyle === "italic" ? "normal" : "italic";
+        });
+
+        // Toggle underline style
+        document.getElementById("underline").addEventListener("click", function () {
+            const text = document.getElementById("text-container");
+            text.style.textDecoration = text.style.textDecoration === "underline" ? "none" : "underline";
+        });
+
+        // Toggle bold style
+        document.getElementById("bold").addEventListener("click", function () {
+            const text = document.getElementById("text-container");
+            text.style.fontWeight = text.style.fontWeight === "bold" ? "normal" : "bold";
+        });
+
+        // Change font family
+        document.getElementById("list").addEventListener("change", function () {
+            const selectedFont = this.value;
+            document.getElementById("text-container").style.fontFamily = selectedFont;
+        });
+
+        // Get current CSS and display
+        document.getElementById("getstyle").addEventListener("click", function () {
+            const text = document.getElementById("text-container");
+            const style = window.getComputedStyle(text);
+
+            const props = [
+                "color",
+                "font-size",
+                "font-family",
+                "text-decoration",
+                "font-style",
+                "font-weight"
+            ];
+
+            let output = "";
+
+            props.forEach(function (prop) {
+                let value = style.getPropertyValue(prop);
+
+                if (prop === "color") {
+                    value = colorNameFromRGB(value) || value;
+                }
+
+                output += `${prop}: ${value.trim()}; `;
+            });
+
+            document.getElementById("css-props").textContent = output.trim();
+        });
+
+        // Basic RGB to color name map (optional)
+        function colorNameFromRGB(rgb) {
+            const colors = {
+                "rgb(0, 0, 0)": "black",
+                "rgb(255, 0, 0)": "red",
+                "rgb(0, 128, 0)": "green",
+                "rgb(0, 0, 255)": "blue",
+                "rgb(255, 255, 0)": "yellow",
+                "rgb(255, 255, 255)": "white"
+            };
+            return colors[rgb.toLowerCase()];
+        }
+    </script>
+
+</body>
+</html>

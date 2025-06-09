@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Internship Webpage</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #222;
+      color: white;
+      padding: 15px 20px;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    header .social a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    header .social a:hover {
+      color: #00bfff;
+      text-decoration: underline;
+    }
+
+    nav {
+      background-color: #444;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #0c94e8;
+      color: black;
+      outline: none;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 25%;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .sidebar ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .main-content {
+      width: 75%;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .box {
+      flex: 1 1 28%; 
+      background-color: #e0e0e0;
+      padding: 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .box:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transform: translateY(-5px);
+    }
+
+    .box img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">HashedBit</div>
+    <div class="social">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Internship Tips</h2>
+      <ul>
+        <li>Build projects regularly</li>
+        <li>Learn version control (Git)</li>
+        <li>Practice problem solving</li>
+        <li>Join developer communities</li>
+        <li>Stay updated with tech trends</li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="box">
+        <h3>HTML Fundamentals</h3>
+        <img src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="HTML5 Logo" />
+        <p>Learn the basics of HTML — structure your web pages efficiently with semantic elements.</p>
+      </div>
+      <div class="box">
+        <h3>CSS Styling</h3>
+        <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="CSS3 Logo" />
+        <p>Master CSS for responsive and modern designs, including Flexbox and Grid layouts.</p>
+      </div>
+      <div class="box">
+        <h3>Project Deployment</h3>
+        <img src="https://images.unsplash.com/1/type-away-numero-dos.jpg?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Deployment Illustration" />
+        <p>Understand how to deploy your sites online using GitHub Pages and other free hosting platforms.</p>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Sample Footer Text</p>
+  </footer>
+
+</body>
+</html>

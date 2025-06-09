@@ -1,0 +1,42 @@
+.ipl-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f4f7fa;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.ipl-container h1 {
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 30px;
+}
+
+.ipl-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.ipl-table th,
+.ipl-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.ipl-table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+}
+
+.ipl-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.ipl-table tbody tr:hover {
+  background-color: #dbeafe;
+}

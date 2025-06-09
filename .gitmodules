@@ -1,0 +1,9 @@
+[submodule "assignmentSeven/ipl-points-table"]
+	path = assignmentSeven/ipl-points-table
+	url = https://github.com/Vipinnagar169/HashedBit-.git
+[submodule "assignmentFive/calc-app"]
+	path = assignmentFive/calc-app
+	url = https://github.com/Vipinnagar169/HashedBit-.git
+[submodule "assignmentSix/todo-app"]
+	path = assignmentSix/todo-app
+	url = https://github.com/Vipinnagar169/HashedBit-.git
