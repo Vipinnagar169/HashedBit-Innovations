@@ -7,7 +7,7 @@ const MovieDetails = () => {
   const navigate = useNavigate();
   const movie = movies.find((m) => m.id === parseInt(id));
 
-  return (
+  return (  
     <div className="p-6">
       <h1 className="text-3xl font-bold">{movie.title}</h1>
       <img src={movie.image} alt={movie.title} className="my-4 w-64 h-96" />

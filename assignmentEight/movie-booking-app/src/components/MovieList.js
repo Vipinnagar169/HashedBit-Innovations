@@ -1,27 +1,33 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import movies from '../data/movies';
 
-const MovieList = () => {
-  const navigate = useNavigate();
-
+export default function MovieList() {
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-4 text-center">Select a Movie</h1>
-      <div className="grid grid-cols-4 gap-6">
-        {movies.map((movie) => (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: '20px',
+        padding: '20px'
+      }}
+    >
+      {movies.map((movie) => (
+        <Link key={movie.id} to={`/movie/${movie.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
           <div
-            key={movie.id}
-            className="shadow-md p-4 cursor-pointer hover:scale-105 transition-transform"
-            onClick={() => navigate(`/movie/${movie.id}`)}
+            style={{
+              cursor: 'pointer',
+              border: '1px solid #ccc',
+              padding: '10px',
+              borderRadius: '10px',
+              textAlign: 'center',
+              boxShadow: '0px 2px 8px rgba(0,0,0,0.1)',
+            }}
           >
-            <img src={movie.image} alt={movie.title} className="w-full h-72 object-cover mb-2" />
-            <h2 className="text-lg font-semibold">{movie.title}</h2>
+            <img src={movie.image} alt={movie.title} style={{ width: '100%', borderRadius: '10px' }} />
+            <h2>{movie.title}</h2>
           </div>
-        ))}
-      </div>
+        </Link>
+      ))}
     </div>
   );
-};
-
-export default MovieList;
+}
